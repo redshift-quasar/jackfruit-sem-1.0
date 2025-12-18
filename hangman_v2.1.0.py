@@ -2,8 +2,6 @@
 """
 Hangman Game v2.2.0
 ===================
-Python implementation with categories including Indian movies.
-
 Version History:
 - v1.0.0: Basic Python code
 - v2.0.0: Menu system
