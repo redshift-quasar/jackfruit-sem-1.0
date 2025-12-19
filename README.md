@@ -1,3 +1,9 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+![Team](https://img.shields.io/badge/Team-4%20Members-blueviolet?style=for-the-badge&logo=group&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.6%2B-brightgreen.svg?style=for-the-badge&logo=python&logoColor=yellow)
+
+
+
 # 🎮 Python Terminal Games Collection
 
 A collection of two fun and interactive **Python terminal games**:
@@ -86,7 +92,8 @@ A 3x3 grid-based game supporting both single-player (vs computer) and two-player
 
   📁 jackfruit-sem-1.0/
   
-  │  
+  │    
+  ├── LICENSE
   ├── hangman_v2.5.2.py # Hangman v2.5.2 script  
   ├── tictactoe_v2.0.0.py # Tic Tac Toe with AI difficulties  
   └── README.md # This file
