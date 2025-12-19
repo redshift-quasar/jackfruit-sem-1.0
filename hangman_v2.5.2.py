@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Hangman Game v2.5.0
+Hangman Game v2.5.2
 ===================
 
-Smooth ANSI-based screen clearing with fixed ASCII drawing.
-Difficulty removed (fixed 6 guesses).
+v2.5.2 Patch: Final screen now shows COMPLETE REVEALED WORD 
+for both win and loss (fixed underscore bug).
 
 Version History:
 - v1.0.0: Basic Hangman game logic
@@ -17,6 +17,8 @@ Version History:
 - v2.5.0: Removed difficulty levels (fixed 6 guesses),
            straight gallows alignment,
            smooth screen clearing using ANSI escape codes
+- v2.5.1: Feedback screens pause after correct/wrong guesses
+- v2.5.2: Final screen shows complete revealed word (win/loss)
 """
 
 import random
@@ -140,9 +142,9 @@ def print_hangman(wrong, max_guesses, was_correct, was_wrong,
     for line in HANGMAN_STAGES[stage]:
         print(line)
 
-    if wrong >= max_guesses:
-        print(f"\n💀 GAME OVER, {player}")
-        print(f"The word was: {secret_word}")
+    # v2.5.1: Pause feedback screens before next input
+    if (was_correct or was_wrong) and has_won != 2:
+        input("\n👆 Press Enter to continue...")
 
 def print_final_screen(wrong, max_guesses, secret_word, player, won):
     clear_screen()
@@ -157,7 +159,8 @@ def print_final_screen(wrong, max_guesses, secret_word, player, won):
         print(f"You used {wrong}/{max_guesses} guesses")
         stage = 6
 
-    print("\nWord:", ' '.join(['_'] * len(secret_word)), "\n")
+    # v2.5.2: SHOW COMPLETE REVEALED WORD (fixed underscore bug)
+    print("\nWord:", ' '.join(list(secret_word)), "\n")
 
     for line in HANGMAN_STAGES[stage]:
         print(line)
@@ -192,7 +195,7 @@ def get_player_name():
 
 def show_main_menu():
     clear_screen()
-    print("🎮 HANGMAN v2.5.0")
+    print("🎮 HANGMAN v2.5.2")
     print("=" * 40)
     for i, key in enumerate(CATEGORIES, start=1):
         print(f"{i}. {key}")
@@ -252,7 +255,7 @@ def main():
                 play_hangman(CATEGORIES[key], key, player)
             elif choice == len(keys) + 2:
                 clear_screen()
-                print(f"Thanks for playing Hangman v2.5.0, {player}! 👋")
+                print(f"Thanks for playing Hangman v2.5.2, {player}! 👋")
                 break
 
 if __name__ == "__main__":
