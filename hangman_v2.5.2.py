@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 Hangman Game v2.5.2
 ===================
