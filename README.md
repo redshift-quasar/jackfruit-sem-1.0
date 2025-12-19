@@ -93,7 +93,7 @@ A 3x3 grid-based game supporting both single-player (vs computer) and two-player
   📁 jackfruit-sem-1.0/
   
   │    
-  ├── LICENSE
+  ├── LICENSE  
   ├── hangman_v2.5.2.py # Hangman v2.5.2 script  
   ├── tictactoe_v2.0.0.py # Tic Tac Toe with AI difficulties  
   └── README.md # This file
